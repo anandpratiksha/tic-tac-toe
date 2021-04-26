@@ -1,0 +1,107 @@
+html {
+  height:100%;
+}
+
+body {
+  margin:0; /* Margin 0, for a fresh clean start with no margin */
+}
+
+.bg { 
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5; /*.5 means how transparent an element is*/
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;/* z-index only affects elements that have a position value other than default*/
+}
+
+.bg2 { 
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide { /*Specifies the position of travel of animation*/
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+.button {  /* Used in animating the tap to play button */
+  border-radius: 90px;
+  background-color: #f4511e;
+  border: none;
+  color: blue;
+  text-align: center;
+  font-size: 23px;
+  font-family: cursive;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span { /*Animation property before clicking the button */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after { /* Animation property after clicking the button */
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+li{    
+  text-align: left;
+  color: #440b84;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.content{
+  background-image: url(https://media.istockphoto.com/photos/business-marketing-strategy-planning-concept-wooden-block-tic-tac-toe-picture-id915487006?k=6&m=915487006&s=612x612&w=0&h=5LjPsBAxOnpIZh7pO97T_FAu5Bt5sQHLW5E4B7uJpCA=);
+  background-repeat: no-repeat;
+  background-size: 100%,100%;
+}

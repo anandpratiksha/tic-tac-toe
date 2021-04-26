@@ -1,0 +1,293 @@
+body { /*game text-alignment in center*/
+    text-align: center;
+}
+
+.shift {
+    /*shift class will bring our board in the middle*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tr td { /*Board of the game is made with the help of table*/
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    font-size: 70px;
+    font-family: serif;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse; /*collaspe fill the spaces no space left between rows n col*/
+}
+
+table tr td:hover {
+    cursor: pointer; /*after cursor is pointed on board it will show/hover color*/
+    background: rgb(185, 176, 222);
+}
+
+#player,#win {
+    font-style: oblique; /*font is changed of winner n player*/
+    font-family: auto;
+}
+
+.btn {  /*style is done of reset n start game button */
+    width: 200px;
+    height: 50px;
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;/*The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area*/
+    /*hidden - The overflow is clipped, and the rest of the content will be invisible*/
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    color: black; /*hovers d font */
+}
+
+.btn:active:after { 
+    padding: 0;/*padding properties are used to generate space around an element's content, inside of any defined borders*/
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.btn:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important; /*!important means something to avoid whenever possible.*/
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.background {
+    background: linear-gradient(132deg, #FC415A, #591BC5, #212335); /* it changes bg with colors n animation infinite time after 15s colors will change*/
+    background-size: 400% 400%; /*bg animation is done in  name is gradient for 15sec*/
+    animation: Gradient 15s ease infinite; /*An element with position: relative; is positioned relative to its normal position.*/
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0px;
+}
+
+.cube {
+   position: absolute; /*absolute is positioned relative to the nearest positioned ancestor*/
+   top: 80vh;/*vw vh is related to viewport height n width viewport varies with devices.used for responsive web design*/
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;/*cube border is white solid means line*/
+    transform-origin: top left;/*transform is 2D 3D tranfrmtn*/
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite; /*ease-in 	Specifies a transition effect with a slow start */
+}
+
+/*:nth-child() takes a single argument that describes a pattern for matching element indices in a list of siblings. Element indices are 1-based.*/
+.cube:nth-child(2n) {
+    border-color: #FFF;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+}
+
+@keyframes Gradient { /*its of background*/
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes cube { /*rotates d cube*/
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /*changes font*/
+}
+
+.modal { /*made by button ..names n pictures*/
+    font-style: oblique;
+    display: none;
+    position: fixed;
+    z-index: 1;/* Stay in place images z index*/
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;/*The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.*/
+    /** Similar to scroll, but it adds scrollbars only when necessary*/
+    /** Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#enter {
+    height: 25px;
+    font-size: large;
+    font-family: emoji;
+    background-color: ghostwhite;
+}
+
+.modal-content {
+    font-style: oblique;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop { /*A keyframe defines the style that will be applied for that moment within the animation.*/
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close { /*close button of modal*/
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, /*:hover selector is used to select elements when you mouse over them.*/ 
+.close:focus { /*focuses on close n hovers it*/
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header { /*modals header will be green in color*/
+    padding: 2px 8px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.profile { /*The flex property sets the flexible length on flexible items*/
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 50px;
+    border-radius: min(10px);
+    flex-shrink: 0;/*The flex-shrink property specifies how the item will shrink relative to the rest of the flexible items inside the same container.*/
+}
+
+.profile figcaption {
+    font-size: 23px;
+    padding: 0.5rem 1rem;
+    font-family: auto;
+}
+
+#myBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    width: 90px;
+    background-color: chocolate;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+
+#ps {
+    display: flex;/*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).*/
+    justify-content: space-around;/*space-around 	Items will have space before, between, and after them*/
+}
+
+#box1,#box2 { /*score board of x n o points*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    color: white;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    background: #1D1F20;
+}
+
+h3 {
+    display: flex;
+    font-family: cursive;
+    align-items: center;
+}

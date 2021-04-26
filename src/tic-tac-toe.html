@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="Stylesheet" href="tic-tac-toe.css"> <!--Linking css file -->
+  <script src="tic-tac-toe.js" defer></script>   <!--Linking  js file, and making js code run after html content is loaded using defer-->
+  <title>Tic-Tac-Toe</title>
+  <link rel="shortcut icon" href="PNG image.png" type="image/x-icon">  
+</head>
+<body>
+  <div class="background">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>  <!-- Class cube & background defines the Animation-->
+<h1>Tic-Tac-Toe!!</h1> <!--Heading of the game-->
+<label><b>Player(X) Name:</b></label><input type="text" id="demo1">
+<label><b>Player(O) Name:</b><input type="text" id="demo2"></label>
+<button type="button" onclick="demo()" id="enter">Enter</button> <!--It is used to run the function demo, to access the local storage for names of player-->
+<h2 id="player">'s Turn !!</h2> <!--This will show the Turn of Particular person-->
+<table class="shift">
+<tr>
+  <td id="s1" onclick="Main(this)"></td> <!--Specifies each cells in the board-->
+  <td id="s2" onclick="Main(this)"></td>
+  <td id="s3" onclick="Main(this)"></td>
+</tr>
+<tr>
+  <td id="s4" onclick="Main(this)"></td>
+  <td id="s5" onclick="Main(this)"></td>
+  <td id="s6" onclick="Main(this)"></td>
+</tr>
+<tr>
+  <td id="s7" onclick="Main(this)"></td>
+  <td id="s8" onclick="Main(this)"></td>
+  <td id="s9" onclick="Main(this)"></td> <!--Main(this),'this' means we create a object for the function -->
+</tr>
+</table> <!--Table to create Tic tac toe Board-->
+<div id="ps">
+<h3>Player X's Points:<span id="box1">0</span></h3>
+<h2 id="win" class="winner">winner:</h2> <!--It will display the winner of the game-->
+<h3>Player Y's Points:<span id="box2">0</span></h3> <!--Score displayed when  person's win game-->
+</div>
+<button onclick="reset1()" class="btn">Reset Board</button><br> <!--This button will reset only the Tic Tac Toe board-->
+<button onclick="reset2()" class="btn">Start New Game</button> <!--This button will restart the whole new game-->
+<button id="myBtn">Game Made By:</button>
+<div id="myModal" class="modal"> <!--The pop-up box will appear here-->
+<div class="modal-content">
+<div class="modal-header">
+<span class="close">&times;</span>
+<h2>Made By:</h2>
+</div>
+<div class="modal-body">
+<figure class="profile">
+  <img src="./../images/honey.jpg"/>
+    <figcaption>
+      <p><b>Honey Andani</b></p>
+    </figcaption>
+</figure>
+<figure class="profile">
+  <img src="./../images/lenin.jpg"/>
+  <figcaption>
+   <p><b>Lenin Dallas</b></p>
+  </figcaption>
+</figure>
+<figure class="profile">
+  <img src="./../images/prabhat.jpg"/>
+    <figcaption>
+      <p><b>Prabhat Kaushik</b></p>
+      </figcaption>
+</figure>
+<figure class="profile">
+  <img src="./../images/pratiksha.jpg"/>
+  <figcaption>
+    <p><b>Pratiksha Anand</b></p>
+  </figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>  /* This code group is run to display images of programmers of this game */
+    var modal = document.getElementById("myModal");  
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>
+</body>
+</html>

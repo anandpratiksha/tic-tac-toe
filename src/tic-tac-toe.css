@@ -125,7 +125,6 @@ table tr td:hover {
     left: 10vw;
     top: 85vh;
 }
-
 .cube:nth-child(6) {
     animation-delay: 10s;
     left: 50vw;

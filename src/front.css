@@ -67,7 +67,6 @@ h1 {
   cursor: pointer;
   margin: 5px;
 }
-
 .button span { /*Animation property before clicking the button */
   cursor: pointer;
   display: inline-block;

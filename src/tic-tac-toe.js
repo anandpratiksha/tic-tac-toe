@@ -2,14 +2,12 @@ var count = 1; //Initial value for moves will be starting from 1
 var current="X"; 
 var sp1 = 0;
 var sp2 = 0;
-var audio = new Audio('C:/Users/Pratiksha/Downloads/notification.mp3');
 function Main(fill){
     player(); //player function will show the turn of the player.
     if(count <= 9){ //when count will less than equals to 9 then do the following things.
         if(fill.innerHTML == ""){ //If the box is empty
             fill.innerHTML = (current == "X") ? "X" : "O"; //Then the ternary operator will check if the current value is X then put the value in box
             count++;
-            audio.play();
             changeplayer();
             if(checkWinner()){ //Conditions to find our winner
                 if(fill.innerHTML == "X"){ //if the value of box is 'X'
